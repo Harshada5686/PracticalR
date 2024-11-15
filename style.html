@@ -1,0 +1,37 @@
+Sudo apt install docker.io
+Sudo apt get update
+Sudo systemctl enable docker
+create two files 1) index.html 2) Dockerfile
+
+FROM  nginx 
+COPY  index.html \usr\share\enginx\html\
+
+FROM nginx 
+WORKDIR/user/share/nginx/html
+COPY . . 
+EXPOSE 80
+
+comand :- sudo Docker build -t (project_name) .
+
+output: image genrate
+
+2) sudo Docker images 
+
+3) sudo Docker run -d -p 8080:80 (project_name)
+
+open Brower:- 0.0.0.0:8080 ----> disply index.html
+
+
+
+sudo systemctl status Jenkins
+
+NT: ngrok http 8080
+
+
+login on a Github Con new window) = Open the repository that we want to build on a jenkins Copy the repo/project link from Code (http).
+
+Jenkins
+
+Click on new item Enter item name (eg.dem) select freestyle Project Click Ok from source code Management Select git= Paste the Git repo url (that copied from githu →From Branches to Build (write main instead of master) from Build Triggers select GitHub hook trigger for GITSem polling
+
+Click Apply Save.
